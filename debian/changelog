@@ -1,3 +1,43 @@
+unzip (6.0-12) unstable; urgency=medium
+
+  * Fix zipinfo crash where a value <= 25.5 was printed in a buffer
+    having room only for values < 10.0. The integral part is now printed
+    at attribs[11] using %2u instead of attribs[12] using %u.
+    This way the output is the same as before for values < 10.
+    Authors tell me that the next unzip release will have a fix
+    like this, at least for the Unix case. Closes: #744212.
+
+ -- Santiago Vila <sanvila@debian.org>  Thu, 24 Apr 2014 23:39:38 +0200
+
+unzip (6.0-11) unstable; urgency=medium
+
+  * Lowered mime priority to 3, somewhat below 5 which is file-roller
+    default value. Closes: #727306.
+  * Increase size of cfactorstr array in list.c to avoid a buffer
+    overflow problem. Closes: #741384.
+
+ -- Santiago Vila <sanvila@debian.org>  Mon, 17 Mar 2014 17:38:50 +0100
+
+unzip (6.0-10) unstable; urgency=low
+
+  * Fixed bug "unzip thinks some files are symlinks". Closes: #717029.
+    Reported by Jeff King. Patch by Andreas Schwab.
+  * Added recommended targets build-arch and build-indep.
+  * Dropped obsolete Conflicts and Replaces on unzip-crypt, for which
+    the last version was a dummy transitional package.
+  * The copyright file is generated from copyright.in at build time.
+    Added lintian override for no-debian-copyright.
+
+ -- Santiago Vila <sanvila@debian.org>  Mon, 14 Oct 2013 18:48:40 +0200
+
+unzip (6.0-9) unstable; urgency=low
+
+  * Added NO_WORKING_ISPRINT to DEFINES so that UTF8 filenames are
+    displayed correctly. Reported by Slavek Banko. Closes: #682682.
+  * Use the right strip command when cross-building. Closes: #695141.
+
+ -- Santiago Vila <sanvila@debian.org>  Sun, 24 Feb 2013 17:12:00 +0100
+
 unzip (6.0-8) unstable; urgency=low
 
   * Made unzip -X to actually restore uid/gid information.
