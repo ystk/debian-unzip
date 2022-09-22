@@ -1,3 +1,11 @@
+unzip (6.0-16+deb8u7) jessie-security; urgency=medium
+
+  * Non-maintainer upload by the ELTS Team.
+  * CVE-2022-0530: segmentation fault on invalid input.
+  * CVE-2022-0529: heap buffer overwrite. Closes: #1010355.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Thu, 22 Sep 2022 18:46:21 +0200
+
 unzip (6.0-16+deb8u6) jessie-security; urgency=high
 
   * Non-maintainer upload by the LTS team.
